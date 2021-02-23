@@ -1,0 +1,105 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <div>
+            <h1> Select Courses That You Want To Learn</h1>
+        </div>
+<!--                <div>
+                    <h:form>
+        
+                        <h:panelGrid  columns="2">
+                            <div>
+                                <label>Course Code</label>
+                                <h:inputText value="#{courseModel.course.code}"/>
+                            </div>
+                            <div>
+                                <label>Course Name</label>
+                                <h:inputText value="#{courseModel.course.name}"/>
+                            </div>
+        
+                            <div>
+                                <label>Credits</label>
+                                <h:inputText value="#{courseModel.course.credits}"/>
+        
+                            </div>
+        
+        
+                            <div>
+        
+                                <h:commandButton style="background-color: cyan; color: black" value="#{courseModel.updateCourse?'Cancel':'Save'}" action="#{courseModel.registerCourse()}"/>
+        
+                            </div>
+                        </h:panelGrid>
+        
+                    </h:form>
+                </div>-->
+        <div>
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>Course Code</th>
+                        <th>Course Name</th>
+                        <th>Credits</th>
+                        <th>Fees</th>
+                        <th>Actions</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <ui:repeat value="#{studentModel.courses}" var="cour">
+                        <tr>
+                            <td>#{cour.code}</td>
+                            <td>#{cour.name}</td>
+                            <td>#{cour.credits}</td>
+                            <td>#{cour.credits*15000}</td>
+
+
+                            <td>
+                                <h:form>
+
+                                    <h:commandButton style="background-color: blue; color: white" value="Add" 
+                                                     action="#{studentModel.addSelectedCourse(cour)}" 
+                                                     rendered="#{studentModel.selectedCourses.contains(cour) == false}"/>
+                                    <h:commandButton style="background-color: blue; color: white" value="remove" 
+                                                     action="#{studentModel.deleteCourse(cour)}"
+                                                     rendered="#{studentModel.selectedCourses.contains(cour)}"/>
+
+
+                                </h:form>
+
+                            </td>
+                        </tr>
+                    </ui:repeat>
+                </tbody>
+            </table>
+            <div>
+                <h:form>
+                    <h:panelGrid columns="2">
+                        <h:commandButton style="background-color: brown; color: white" value="VIEW DETAIL" action="selectedCourses.xhtml?faces=redirect"/>
+                    </h:panelGrid>
+                </h:form>
+
+            </div>
+            <div>
+                <h:form>
+                    <h:panelGrid columns="2">
+                        <h:commandButton style="background-color: green; color: white;" value="COMPLETE REGISTRATION" action="FinalForm.xhtml?faces=redirect"/>
+                    </h:panelGrid>
+                </h:form>
+            </div>
+        </div>
+        <div>
+            <p>number of courses: #{studentModel.selectedCourses.size()}</p>
+            <p>Total Amount: #{studentModel.totalAmount()}</p>
+            <p>Total Credits #{studentModel.totalCredit()}</p>
+        </div>
+    </h:body>
+</html>
+

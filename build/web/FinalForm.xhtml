@@ -1,0 +1,62 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <div>
+        <h1>Student Information Registration</h1>
+    </div>
+    <h:body>
+        <div>
+            <h:form>
+                <h:panelGrid  columns="2">
+                    <div>
+                        <label>Student Id</label>
+                        <p>#{studentModel.student.name}</p>
+                    </div>
+                    <div>
+                        <label>Name</label>
+                        <p>#{studentModel.student.name}</p>
+                    </div>
+
+                    <div>
+                        <label>Gender</label>
+
+                        <p>#{studentModel.student.gender}</p>
+                    </div>
+                    <div>
+                        <label>Date Of Birth</label>
+                        <p>#{studentModel.student.dateOfBirth}</p>
+                    </div>
+                    <div>
+                        <label>Number Of Courses</label>
+                        <p>#{studentModel.selectedCourses.size()}</p>
+                    </div>
+                    <div>
+                        <label>Total Credits</label>
+                        <p>#{studentModel.totalCredit()}</p>
+                    </div>
+                    <div>
+                        <label>Total School Fees</label>
+                        <p>#{studentModel.totalAmount()}</p>
+                    </div>
+                </h:panelGrid>
+            </h:form>
+            <div>
+                <h:panelGrid columns="2">
+                    <h:form>
+                        <h:commandButton value="REGISTER NOW" action="#{studentModel.registerCourse()}" />
+                    </h:form>
+                    
+                    
+                </h:panelGrid>
+            </div>
+
+        </div>
+
+    </h:body>
+</html>
+
