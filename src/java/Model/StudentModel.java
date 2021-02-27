@@ -25,6 +25,9 @@ public class StudentModel {
 
     private Student student = new Student();
     private List<Student> students = StudentDao.findAll();
+    
+    private String studentName = "";
+    private int amount = 0;
 
     private List<Course> courses = CourseDao.findAllCourses();
     private List<Course> selectedCourses = new ArrayList<>();
@@ -97,12 +100,39 @@ public class StudentModel {
         try {
             student.setCourses(selectedCourses);
             StudentDao.createStudent(student);
-            return "index.xhtml?faces-redirect=true";
+            
+            
+            
+            studentName = student.getName();
+            amount = totalAmount();
+            
+            student = new Student();
+            selectedCourses = new ArrayList<>();
+            
+            return "RegistrationFeedBack.xhtml?faces-redirect=true";
         } catch (Exception e) {
             e.printStackTrace();
             return "Course.xhtml?faces-redirect=true";
         }
         
     }
+
+    public String getStudentName() {
+        return studentName;
+    }
+
+    public void setStudentName(String studentName) {
+        this.studentName = studentName;
+    }
+
+    public int getAmount() {
+        return amount;
+    }
+
+    public void setAmount(int amount) {
+        this.amount = amount;
+    }
+    
+    
 
 }

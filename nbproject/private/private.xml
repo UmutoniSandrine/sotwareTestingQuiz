@@ -11,13 +11,19 @@
             <file>file:/home/bitwayiki/NetBeansProjects/Student_Registration/src/java/hibernate.cfg.xml</file>
             <file>file:/home/bitwayiki/NetBeansProjects/Student_Registration/web/Course.xhtml</file>
             <file>file:/home/bitwayiki/NetBeansProjects/Student_Registration/src/java/Main/Test.java</file>
+            <file>file:/home/bitwayiki/NetBeansProjects/Student_Registration/test/dao/SeleniumTestCases.java</file>
             <file>file:/home/bitwayiki/NetBeansProjects/Student_Registration/web/RegistrationFeedBack.xhtml</file>
             <file>file:/home/bitwayiki/NetBeansProjects/Student_Registration/web/selectedCourses.xhtml</file>
             <file>file:/home/bitwayiki/NetBeansProjects/Student_Registration/src/java/Domain/NewHibernateUtil.java</file>
             <file>file:/home/bitwayiki/NetBeansProjects/Student_Registration/web/FinalForm.xhtml</file>
+            <file>file:/home/bitwayiki/NetBeansProjects/Student_Registration/test/operation/AbstractTestClass.java</file>
             <file>file:/home/bitwayiki/NetBeansProjects/Student_Registration/src/java/Domain/Student.java</file>
+            <file>file:/home/bitwayiki/NetBeansProjects/Student_Registration/test/dao/StudentDaoNGTest.java</file>
+            <file>file:/home/bitwayiki/NetBeansProjects/Student_Registration/test/dao/ChromeDriver.java</file>
             <file>file:/home/bitwayiki/NetBeansProjects/Student_Registration/src/java/Model/StudentModel.java</file>
+            <file>file:/home/bitwayiki/NetBeansProjects/Student_Registration/test/dao/CourseDaoNGTest.java</file>
             <file>file:/home/bitwayiki/NetBeansProjects/Student_Registration/src/java/Domain/Course.java</file>
+            <file>file:/home/bitwayiki/NetBeansProjects/Student_Registration/test/operation/CommonOperation.java</file>
         </group>
     </open-files>
 </project-private>
